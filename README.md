@@ -12,7 +12,7 @@ Set Full Screen Game CG to Wallpaper!
 5. 如果关闭黑框，则只能通过结束进程退出壁纸；
 6. 如果未关闭黑框，还能按右ctrl，将游戏恢复可操作状态，再设置壁纸必须重新打开本程序。
 
-
+---------------
 0. Supported systems: Windows 10/11, must be activated, otherwise personalization is not possible.
 1. This tool is suitable for games that can be played in full screen, including emulators such as BlueStacks.
 2. Before use, the following directory D:/wallpaperback must be created and at least one default wallpaper must be placed in it.
