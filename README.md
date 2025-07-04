@@ -23,8 +23,10 @@ Set any window such as Full Screen Game CG, Video, Web Page, etc. as dynamic Wal
 1. 手动设置默认全屏和默认循环播放。   
 2. 下载Release或编译程序。   
 3. 新建一个文本文件，编写脚本，然后改为.bat文件。   
-注意：要修改为正确的路径，若视频打开较慢，则timeout要设置更长一些；使用 start /b 不会出现控制台，不影响热键恢复。
+注意：要修改为正确的路径，若视频打开较慢，则timeout要设置更长一些。
+脚本第一行的作用是不出现控制台黑窗口，不影响任务视图兼容和热键恢复。
 ```
+	%1 start mshta vbscript:createobject("wscript.shell").run("""%~0"" ::",0)(window.close)&&exit
 	start "" "C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe" /filedlg "xxx\YourVideo.mp4" 
 	timeout /t 2 
 	start /b "" "xxx\setwallpaper_lctrl_pause.exe"  "YourVideo.mp4 - PotPlayer"
@@ -36,6 +38,7 @@ Set any window such as Full Screen Game CG, Video, Web Page, etc. as dynamic Wal
 不需要手动设置默认全屏和循环播放，可直接使用命令行，参考文档：https://wiki.videolan.org/VLC_command-line_help/   
 使用--no-audio选项可使视频永久静音。
 ```
+	%1 start mshta vbscript:createobject("wscript.shell").run("""%~0"" ::",0)(window.close)&&exit
 	start "" "C:\Program Files\VideoLAN\VLC\vlc.exe" --loop --no-osd --fullscreen "xxx\YourVideo.mp4" 
 	timeout /t 2 
 	start /b "" "xxx\setwallpaper_lctrl_pause.exe"  "YourVideo.mp4 - VLC media player"
