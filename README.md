@@ -15,4 +15,4 @@ Set any window such as Full Screen Game CG, Video, Web Page, etc. as dynamic Wal
 9. 建议使用任务视图，将控制台移到其他桌面上。
 10. 关闭控制台后，再次设置动态壁纸必须重新打开本程序。
 11. 修改源代码中的宏SET_WALLPAPER_HOTKEY/RESET_WALLPAPER_HOTKEY，重新编译程序（需VS2019及以上版本新建控制台项目），可自定义设置/还原热键。 
-12. 若要开机启动，必须编写cmd脚本，再将该脚本添加至注册表启动项。
+12. 若要开机启动，必须编写cmd/bat脚本，再将该脚本添加至注册表启动项或开始菜单启动目录。提示：向AI提问“如何用使用命令行全屏播放视频”。
