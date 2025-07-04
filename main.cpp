@@ -64,6 +64,7 @@ HWND SetAsWallpaperWindow(HWND hwnd, bool autoFullScreen = false, bool taskViewC
         }
         else break;
     } 
+    if (wpaperhwnd == 0 || iconshwnd == 0) return 0;
 
     HWND defviewhwnd = FindWindowExW(iconshwnd, 0, L"SHELLDLL_DefView", L"");
     if (defviewhwnd == 0) return 0;
