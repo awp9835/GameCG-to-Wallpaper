@@ -83,6 +83,14 @@ HWND SetAsWallpaperWindow(HWND hwnd, bool autoFullScreen = false, bool taskViewC
     {
         while (GetAsyncKeyState(RESET_WALLPAPER_HOTKEY) >= 0)
         {
+            //如果意外关闭了explorer或动态壁纸窗口，则自动退出
+            if (!IsWindow(wpaperhwnd)) return NULL;
+            if (!IsWindow(hwnd))
+            {
+                ShowWindow(wpaperhwnd, SW_SHOW);
+                return NULL;
+            }
+
             //使用任务视图后，出现Bug，是因为窗口Z序发生了变化，需要重置
             //GetParent无法正常使用，返回NULL，必须使用其他方法
             HWND znext = GetWindow(hwnd, GW_HWNDNEXT);
